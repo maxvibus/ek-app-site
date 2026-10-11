@@ -1,0 +1,23 @@
+{
+  "name": "εκ",
+  "short_name": "εκ",
+  "lang": "el",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060709",
+  "theme_color": "#060709",
+  "icons": [
+    {
+      "src": "εκ.εικονίδιο.192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "εκ.εικονίδιο.512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
