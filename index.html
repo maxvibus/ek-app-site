@@ -2,6 +2,8 @@
 <html lang="el">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>εκ — Ιβάν Δ. Αθανασόπουλος</title>
 <meta name="description" content="εκ, βιβλίο του Ιβάν Δ. Αθανασόπουλου. Πρώτη έκδοση, Αθήνα 2027.">
@@ -90,7 +92,8 @@ main{padding:0 1.25rem 4rem}
 .book{max-width:var(--measure);margin:0 auto;border-top:1px solid var(--rule);padding-top:3.2rem}
 .lede{font-size:1.18em;line-height:1.55;color:var(--ink);margin-bottom:1.1em;text-wrap:pretty}
 .note{margin-top:1.6rem;font-size:.86em;font-style:italic;opacity:.8}
-p{text-wrap:pretty;hyphens:auto}
+p{text-wrap:pretty;hyphens:auto;-webkit-hyphens:auto}
+@media (min-width:36rem){.book p{text-align:justify}}
 .facts{margin-top:2.8rem;display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.6rem;border-top:1px solid var(--rule);padding-top:1.6rem}
 .facts dt{color:var(--blue);font-weight:600;white-space:nowrap}
 .facts dd{font-variant-numeric:lining-nums tabular-nums}
@@ -132,6 +135,6 @@ footer{text-align:center;color:var(--blue);opacity:.75;font-size:.85em;padding:2
   </section>
 </main>
 
-<footer>© Ιβάν Δ. Αθανασόπουλος · ek.app</footer>
+<footer>© 2026 Ιβάν Δ. Αθανασόπουλος</footer>
 </body>
 </html>
