@@ -55,7 +55,7 @@
   --measure:34rem;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--ochre);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{background:var(--ochre);scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   min-height:100vh;background:var(--ochre);color:var(--ink);
   font-family:"EB Garamond",Garamond,"Times New Roman",serif;
@@ -68,7 +68,7 @@ a:hover,a:focus-visible{border-color:var(--blue)}
 :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
 
 .cover{
-  min-height:100vh;min-height:100svh;display:grid;place-items:center;
+  min-height:88vh;min-height:88svh;display:grid;place-items:center;
   padding:max(3rem,env(safe-area-inset-top)) 1.25rem max(3rem,env(safe-area-inset-bottom));
   text-align:center;position:relative;
 }
@@ -81,14 +81,17 @@ h1{
 .author{font-weight:600;color:var(--blue);font-size:clamp(1.25rem,1.1rem + .8vw,1.6rem);letter-spacing:.01em}
 .release{margin-top:.55rem;color:var(--blue);font-style:italic;opacity:.85}
 .down{
-  position:absolute;left:50%;bottom:max(1.6rem,env(safe-area-inset-bottom));transform:translateX(-50%);
-  border:0;color:var(--blue);opacity:.6;font-size:1.4rem;line-height:1;padding:.5rem;
-  animation:bob 2.6s ease-in-out infinite;
+  position:absolute;left:50%;bottom:max(1.4rem,env(safe-area-inset-bottom));transform:translateX(-50%);
+  width:2.75rem;height:2.75rem;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(0,94,171,.45);background:rgba(255,255,255,.18);color:var(--blue);
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  transition:background .25s,border-color .25s;
 }
-.down:hover{opacity:1}
-@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,6px)}}
+.down:hover,.down:focus-visible{background:rgba(255,255,255,.38);border-color:var(--blue)}
+a.ek{color:inherit;border:0;text-decoration:none;-webkit-tap-highlight-color:transparent}
 
 main{padding:0 1.25rem 4rem}
+.book{scroll-margin-top:1.5rem}
 .book{max-width:var(--measure);margin:0 auto;border-top:1px solid var(--rule);padding-top:3.2rem}
 .lede{font-size:1.18em;line-height:1.55;color:var(--ink);margin-bottom:1.1em;text-wrap:pretty}
 .note{margin-top:1.6rem;font-size:.86em;font-style:italic;opacity:.8}
@@ -97,7 +100,7 @@ p{text-wrap:pretty;hyphens:auto;-webkit-hyphens:auto}
 .facts{margin-top:2.8rem;display:grid;grid-template-columns:auto 1fr;gap:.55rem 1.6rem;border-top:1px solid var(--rule);padding-top:1.6rem}
 .facts dt{color:var(--blue);font-weight:600;white-space:nowrap}
 .facts dd{font-variant-numeric:lining-nums tabular-nums}
-@media (max-width:30rem){.facts{grid-template-columns:1fr;gap:0}.facts dt{margin-top:.85rem}.facts dt:first-child{margin-top:0}}
+@media (max-width:30rem){.facts{gap:.55rem 1rem}}
 footer{text-align:center;color:var(--blue);opacity:.75;font-size:.85em;padding:2rem 1.25rem max(2.4rem,env(safe-area-inset-bottom))}
 
 @media (prefers-reduced-motion:no-preference){
@@ -106,18 +109,22 @@ footer{text-align:center;color:var(--blue);opacity:.75;font-size:.85em;padding:2
   .cover-inner>*:nth-child(3){animation-delay:.45s}
   @keyframes rise{to{opacity:1;transform:none}}
 }
-@media (prefers-reduced-motion:reduce){.down{animation:none}}
+@media (prefers-reduced-motion:no-preference){
+  .down{animation:breathe 2.8s ease-in-out .9s 3}
+  @keyframes breathe{0%,100%{transform:translateX(-50%) scale(1);opacity:1}50%{transform:translateX(-50%) scale(1.08);opacity:.75}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.down{animation:none}}
 @media print{.down{display:none}.cover{min-height:auto;padding:2rem 0}}
 </style>
 </head>
 <body>
 <header class="cover">
   <div class="cover-inner">
-    <h1>εκ</h1>
+    <h1><a class="ek" href="#book" aria-label="εκ — στο κείμενο για το βιβλίο">εκ</a></h1>
     <p class="author">Ιβάν Δ. Αθανασόπουλος</p>
     <p class="release">Εκδίδεται το 2027</p>
   </div>
-  <a class="down" href="#book" aria-label="Για το βιβλίο">↓</a>
+  <a class="down" href="#book" aria-label="Για το βιβλίο"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 5v13M6 12l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </header>
 
 <main>
@@ -127,9 +134,11 @@ footer{text-align:center;color:var(--blue);opacity:.75;font-size:.85em;padding:2
 
     <dl class="facts">
       <dt>Έκδοση</dt><dd>Πρώτη έκδοση, Αθήνα 2027</dd>
+      <dt>Σελίδες</dt><dd>491</dd>
+      <dt>Σχήμα</dt><dd>11 × 14,5 εκ.</dd>
+      <dt>Στοιχειοθεσία</dt><dd>EB Garamond</dd>
       <dt>Έντυπο</dt><dd>ISBN 978-618-00-7030-9</dd>
       <dt>Ηλεκτρονικό</dt><dd>ISBN 978-618-00-7202-0</dd>
-      <dt>Στοιχειοθεσία</dt><dd>EB Garamond</dd>
     </dl>
 
   </section>
