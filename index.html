@@ -2,7 +2,7 @@
 <html lang="el">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>εκ — Ιβάν Δ. Αθανασόπουλος</title>
@@ -55,7 +55,7 @@
   --measure:34rem;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{background:var(--ochre);scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{background:var(--ochre);-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{
   min-height:100vh;background:var(--ochre);color:var(--ink);
   font-family:"EB Garamond",Garamond,"Times New Roman",serif;
@@ -113,7 +113,7 @@ footer{text-align:center;color:var(--blue);opacity:.75;font-size:.85em;padding:2
   .down{animation:breathe 2.8s ease-in-out .9s 3}
   @keyframes breathe{0%,100%{transform:translateX(-50%) scale(1);opacity:1}50%{transform:translateX(-50%) scale(1.08);opacity:.75}}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.down{animation:none}}
+@media (prefers-reduced-motion:reduce){.down{animation:none}}
 @media print{.down{display:none}.cover{min-height:auto;padding:2rem 0}}
 </style>
 </head>
@@ -145,5 +145,6 @@ footer{text-align:center;color:var(--blue);opacity:.75;font-size:.85em;padding:2
 </main>
 
 <footer>© 2026 Ιβάν Δ. Αθανασόπουλος</footer>
+<script src="glide.js" defer></script>
 </body>
 </html>
